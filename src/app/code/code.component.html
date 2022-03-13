@@ -1,0 +1,17 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Generuj kod</h1>
+  <mat-grid-list cols="1" rowHeight="350px">
+    <mat-grid-tile colspan="1">
+      <mat-card  class="dashboard-card">
+        <mat-card-content id="code" class="dashboard-card-content">
+          <div>
+                <button mat-raised-button color="primary" style="color: yellow" (click)="qenerateCode()">generuj kod</button>
+            </div>
+          <div>
+            <h1 style="margin-top: 5%">{{code}}</h1>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
