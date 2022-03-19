@@ -18,12 +18,16 @@ import {MatMenuModule} from '@angular/material/menu';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 import {GuardianService} from "./guardian.service";
+import { NeedyComponent } from './needy/needy.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    CodeComponent
+    CodeComponent,
+    NeedyComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import {GuardianService} from "./guardian.service";
     MatCardModule,
     MatMenuModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [GuardianService],
   bootstrap: [AppComponent]

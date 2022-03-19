@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import {GuardianService} from "../guardian.service";
-import {code} from "../models/code";
+import {Code} from "../models/code";
 
 @Component({
   selector: 'app-code',
@@ -10,19 +10,22 @@ import {code} from "../models/code";
 })
 export class CodeComponent {
 
-  code: string | undefined;
-  errorMessage: any;
-  constructor(private breakpointObserver: BreakpointObserver, private guardianService:GuardianService) {}
 
-  public qenerateCode(){
+
+  public code: Code = {
+    generateCode: ''
+  }
+  errorMessage: any;
+  constructor(private guardianService:GuardianService) {}
+
+  public qenerateCode():void{
     this.guardianService.getCode()
       .subscribe(
-        (response) => {
+        (response:Code) => {
           this.code =  response;
         },
         (error) => {
           console.error(error)
-
         }
       )
   }

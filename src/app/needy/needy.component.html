@@ -1,0 +1,22 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="6" rowHeight="200px">
+    <mat-grid-tile *ngFor="let needy of needyList" colspan="2" rowspan="1">
+<!--      mat-grid-tile*ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">-->
+      <mat-card class="dashboard-card" style="border: 2px solid midnightblue">
+        <mat-card-content class="dashboard-card-content">
+          <div style="text-align: left">
+            <p>Imię: <b>{{needy.name}}</b></p>
+          </div>
+          <div style="text-align: left">
+            <p>Miejsce zamieszkania: <b>{{needy.cityUA}}</b></p>
+          </div>
+          <div style="text-align: left">
+            <p>Miejsce przebywania: <b>{{needy.cityPL}}</b></p>
+          </div>
+          <div><button mat-raised-button color="primary" style="color: yellow">Wybieram</button></div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

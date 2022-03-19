@@ -1,3 +1,4 @@
-export class code {
-  codeGenerate: string | undefined
+
+export interface Code {
+  generateCode: string;
 }
