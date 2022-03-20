@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {Component} from '@angular/core';
+import {GuardianService} from "../guardian.service";
+import {NgForm} from "@angular/forms";
+import {HttpErrorResponse} from "@angular/common/http";
+import {Guardian} from "../models/guardian";
 
 @Component({
   selector: 'app-add-guardian',
@@ -8,26 +10,23 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./add-guardian.component.css']
 })
 export class AddGuardianComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
+
+  public resultGuardian: any;
+
+  constructor(private guardianService: GuardianService) {
+  }
+
+  addGuardian(addFrom: NgForm): void {
+    this.guardianService.addGuardian(addFrom.value).subscribe(
+      (response: Guardian) => {
+        this.resultGuardian = response.responseStatus;
+        if (response.responseStatus == "C") {
+          addFrom.reset();
+        }
+      },
+      (error: HttpErrorResponse) => {
+        this.resultGuardian = "B";
       }
-
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
-
-  constructor(private breakpointObserver: BreakpointObserver) {}
+    );
+  }
 }

@@ -21,6 +21,7 @@ export class AddNeedyComponent {
     this.guardianService.addNeedy(addFrom.value).subscribe(
       (response: Needy) => {
         this.resultString = response.statusResponese;
+        console.log(this.resultString);
         if (response.statusResponese == "D"){
           addFrom.reset();
         }

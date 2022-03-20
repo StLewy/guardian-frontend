@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from 'rxjs';
 import {Needy} from "./models/needy";
 import {Code} from "./models/code"
+import {Guardian} from "./models/guardian";
 
 
 class RequestOptions {
@@ -27,5 +28,8 @@ export class GuardianService {
 
   public addNeedy(needy: Needy): Observable<Needy>{
     return this.http.post<Needy>(`${this.baseURL}/needy/add`, needy);
+  }
+  public addGuardian(guardian: Guardian): Observable<Guardian>{
+    return this.http.post<Guardian>(`${this.baseURL}/guardian/add`, guardian);
   }
 }

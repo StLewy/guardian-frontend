@@ -10,7 +10,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <form>
+          <form #addForm="ngForm" (ngSubmit)="addGuardian(addForm)">
             <table class="example-full-width" cellspacing="5">
               <tr>
                 <td>
@@ -47,6 +47,9 @@
               </tr>
             </table>
           </form>
+          <p *ngIf="resultGuardian == 'C'">poprawnie dokonano zapisu</p>
+          <p *ngIf="resultGuardian == 'E'">takie konto już istnieje</p>
+          <p *ngIf="resultGuardian == 'B'">błąd połaczenia</p>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

@@ -25,6 +25,7 @@ import { AddNeedyComponent } from './add-needy/add-needy.component';
 import {FormsModule} from "@angular/forms";
 import { InviteSponsorComponent } from './invite-sponsor/invite-sponsor.component';
 import { AddGuardianComponent } from './add-guardian/add-guardian.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AddGuardianComponent } from './add-guardian/add-guardian.component';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [GuardianService],
   bootstrap: [AppComponent]
