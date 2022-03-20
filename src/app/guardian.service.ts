@@ -12,8 +12,8 @@ class RequestOptions {
 @Injectable()
 export class GuardianService {
 
-  // baseURL:string = "http://localhost:8080";
-  baseURL:string = "https://guardian-backend-api.herokuapp.com";
+  baseURL:string = "http://localhost:8080";
+  // baseURL:string = "https://guardian-backend-api.herokuapp.com";
 
   constructor(private http: HttpClient) {
   }
@@ -26,7 +26,6 @@ export class GuardianService {
   }
 
   public addNeedy(needy: Needy): Observable<Needy>{
-    let result: Observable<ArrayBuffer>;
     return this.http.post<Needy>(`${this.baseURL}/needy/add`, needy);
   }
 }
