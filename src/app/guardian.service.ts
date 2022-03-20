@@ -12,8 +12,8 @@ class RequestOptions {
 @Injectable()
 export class GuardianService {
 
-  baseURL:string = "http://localhost:8080";
-  // baseURL:string = "https://guardian-backend-api.herokuapp.com";
+  // baseURL:string = "http://localhost:8080";
+  baseURL:string = "https://guardian-backend-api.herokuapp.com";
 
   constructor(private http: HttpClient) {
   }
