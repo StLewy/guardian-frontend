@@ -1,0 +1,78 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Przystąp do programu</h1>
+  <mat-grid-list cols="5" rowHeight="330px">
+    <mat-grid-tile colspan="1" rowspan="1">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <form #addForm="ngForm" (ngSubmit)="addNeedy(addForm)">
+          <table class="example-full-width" cellspacing="5">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>imię</mat-label>
+                  <input ngModel type="text" name="name" id="name" matInput>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>miejscowość zamieszkania</mat-label>
+                  <input ngModel type="text" name="cityUA" id="cityUa" matInput>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>miejscowość przebywania</mat-label>
+                  <input ngModel type="text" name="cityPL" id="cityPL" matInput>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>konto bankowe</mat-label>
+                  <input ngModel type="text" name="bankAccount" id="bankAccount" matInput>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Opis</mat-label>
+                  <textarea ngModel name="description" id="description" matInput ></textarea>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>kod</mat-label>
+                  <input ngModel id="generateCode" name="generateCode" matInput >
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button mat-raised-button type="submit" color="primary">Zapisz</button>
+              </td>
+            </tr>
+          </table>
+          </form>
+          <p *ngIf="resultString == 'D'">poprawnie dokonano zapisu</p>
+          <p *ngIf="resultString == 'C'">kod został już wykorzystany</p>
+          <p *ngIf="resultString == 'K'">konto zostało już wcześniej dodane do innego wpisy </p>
+          <p *ngIf="resultString == 'B'">błąd połaczenia</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
