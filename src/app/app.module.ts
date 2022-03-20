@@ -23,6 +23,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { AddNeedyComponent } from './add-needy/add-needy.component';
 import {FormsModule} from "@angular/forms";
+import { InviteSponsorComponent } from './invite-sponsor/invite-sponsor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from "@angular/forms";
     NavComponent,
     CodeComponent,
     NeedyComponent,
-    AddNeedyComponent
+    AddNeedyComponent,
+    InviteSponsorComponent
   ],
   imports: [
     BrowserModule,
