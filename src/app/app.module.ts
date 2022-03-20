@@ -21,13 +21,16 @@ import {GuardianService} from "./guardian.service";
 import { NeedyComponent } from './needy/needy.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { AddNeedyComponent } from './add-needy/add-needy.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     CodeComponent,
-    NeedyComponent
+    NeedyComponent,
+    AddNeedyComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import {MatInputModule} from "@angular/material/input";
     AppRoutingModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [GuardianService],
   bootstrap: [AppComponent]

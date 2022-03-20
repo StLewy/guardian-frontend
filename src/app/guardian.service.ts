@@ -4,6 +4,11 @@ import {Observable} from 'rxjs';
 import {Needy} from "./models/needy";
 import {Code} from "./models/code"
 
+
+class RequestOptions {
+
+}
+
 @Injectable()
 export class GuardianService {
 
@@ -18,5 +23,10 @@ export class GuardianService {
   }
   public getAllNeedByStatus(): Observable<Needy[]> {
     return this.http.get<Needy[]>(`${this.baseURL}/needy/all-by-status`);
+  }
+
+  public addNeedy(needy: Needy): Observable<Needy>{
+    let result: Observable<ArrayBuffer>;
+    return this.http.post<Needy>(`${this.baseURL}/needy/add`, needy);
   }
 }
