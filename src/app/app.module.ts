@@ -24,6 +24,7 @@ import {MatInputModule} from "@angular/material/input";
 import { AddNeedyComponent } from './add-needy/add-needy.component';
 import {FormsModule} from "@angular/forms";
 import { InviteSponsorComponent } from './invite-sponsor/invite-sponsor.component';
+import { AddGuardianComponent } from './add-guardian/add-guardian.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { InviteSponsorComponent } from './invite-sponsor/invite-sponsor.componen
     CodeComponent,
     NeedyComponent,
     AddNeedyComponent,
-    InviteSponsorComponent
+    InviteSponsorComponent,
+    AddGuardianComponent
   ],
   imports: [
     BrowserModule,

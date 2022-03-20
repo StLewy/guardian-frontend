@@ -1,0 +1,56 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Przystąp do programu</h1>
+  <mat-grid-list cols="5" rowHeight="330px">
+    <mat-grid-tile colspan="1" rowspan="1">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <form>
+            <table class="example-full-width" cellspacing="5">
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>imię</mat-label>
+                    <input ngModel type="text" name="name" id="name" matInput>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>nazwisko</mat-label>
+                    <input ngModel type="text" name="surname" id="surname" matInput>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>email</mat-label>
+                    <input ngModel type="email" name="email" id="email" matInput>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>telefon</mat-label>
+                    <input ngModel type="text" name="phone" id="phone" matInput>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button mat-raised-button type="submit" color="primary">Dodaj</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
