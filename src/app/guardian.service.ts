@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Needy} from "./models/needy";
 import {Code} from "./models/code"
 import {Guardian} from "./models/guardian";
+import {Pairing} from "./models/pairing";
 
 
 class RequestOptions {
@@ -31,5 +32,9 @@ export class GuardianService {
   }
   public addGuardian(guardian: Guardian): Observable<Guardian>{
     return this.http.post<Guardian>(`${this.baseURL}/guardian/add`, guardian);
+  }
+
+  public addPairing(pairing: Pairing): Observable<Pairing>{
+    return this.http.post<Pairing>(`${this.baseURL}/pairing/add`, pairing);
   }
 }

@@ -26,6 +26,8 @@ import {FormsModule} from "@angular/forms";
 import { InviteSponsorComponent } from './invite-sponsor/invite-sponsor.component';
 import { AddGuardianComponent } from './add-guardian/add-guardian.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {DialogChoiceNeedyComponent} from "./dialog-choice-needy/dialog-choice-needy.component";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -35,8 +37,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     NeedyComponent,
     AddNeedyComponent,
     InviteSponsorComponent,
-    AddGuardianComponent
+    AddGuardianComponent,
+    DialogChoiceNeedyComponent
   ],
+  entryComponents: [DialogChoiceNeedyComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -55,7 +59,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [GuardianService],
   bootstrap: [AppComponent]
