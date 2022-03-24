@@ -24,7 +24,6 @@ export class DialogChoiceNeedyComponent implements OnInit {
   }
 
   addPairing(addForm: NgForm) {
-    console.log(addForm.value)
     if (addForm.value['period'] != "" && addForm.value['amount'] != "") {
       this.guardianService.addPairing(addForm.value).subscribe(
         (response: Pairing) => {
